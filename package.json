@@ -52,7 +52,9 @@
     "test": "mocha --no-timeouts",
     "posttest": "npm run coverage",
     "coverage": "istanbul cover --dir coverage _mocha -- --fgrep 'Request Validation' --invert -R dot",
-    "codeclimate": "codeclimate < coverage/lcov.info"
+    "codeclimate": "codeclimate < coverage/lcov.info",
+    "snyk-protect": "snyk protect",
+    "prepublish": "npm run snyk-protect"
   },
   "standard": {
     "ignore": [
@@ -67,14 +69,14 @@
     ]
   },
   "devDependencies": {
-    "codeclimate-test-reporter": "0.1.1",
-    "echint": "^3.0.0",
+    "codeclimate-test-reporter": "0.5.1",
+    "echint": "^4.0.2",
     "glob": "^6.0.1",
     "istanbul": "^0.4.0",
-    "mocha": "^2.3.4",
+    "mocha": "^6.2.3",
     "require-directory": "^2.1.1",
     "should": "^7.1.1",
-    "standard": "^10.0.2"
+    "standard": "^11.0.0"
   },
   "dependencies": {
     "chalk": "^1.1.1",
@@ -85,6 +87,8 @@
     "fs-readfile-promise": "^2.0.1",
     "fs-writefile-promise": "^1.0.3",
     "har-validator": "^5.0.0",
-    "pinkie-promise": "^2.0.0"
-  }
+    "pinkie-promise": "^2.0.0",
+    "snyk": "^1.450.0"
+  },
+  "snyk": true
 }
